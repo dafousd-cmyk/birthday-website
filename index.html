@@ -243,17 +243,17 @@
            browser chrome so the section always matches what's actually
            on screen. */
         .vh-fix {
-            min-height: 100vh;
+            min-height: 100vh !important;
         }
         .vh-fixed {
-            height: 100vh;
+            height: 100vh !important;
         }
         @supports (height: 100svh) {
             .vh-fix {
-                min-height: 100svh;
+                min-height: 100svh !important;
             }
             .vh-fixed {
-                height: 100svh;
+                height: 100svh !important;
             }
         }
     </style>
@@ -275,7 +275,7 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="relative min-h-screen vh-fix w-full flex flex-col items-center justify-end overflow-hidden" style="background-color: #F5CDD5;">
+    <section class="relative vh-fix w-full flex flex-col items-center justify-end overflow-hidden" style="background-color: #F5CDD5;">
         
         <!-- Watercolor sun arc - full bleed, large -->
         <img src="./background.png" alt="" style="position: absolute; top: 5%; left: 50%; transform: translateX(-50%); width: 110%; max-width: none; pointer-events: none; user-select: none; filter: blur(1px);" />
@@ -304,7 +304,7 @@
     </section>
 
     <!-- Dress Code Section -->
-    <section id="dresscode" class="relative min-h-screen vh-fix flex flex-col justify-between items-center w-full font-sans antialiased text-left">
+    <section id="dresscode" class="relative vh-fix flex flex-col justify-between items-center w-full font-sans antialiased text-left">
         <!-- Fixed Background -->
         <div class="absolute inset-0 w-full h-full z-0 overflow-hidden">
             <div class="w-full h-full bg-cover bg-center bg-no-repeat" style="background-image: url('./page 2 bg.png');"></div>
@@ -420,7 +420,7 @@
     </section>
 
     <!-- RSVP Section -->
-    <section id="rsvp" class="relative min-h-screen vh-fix flex items-center justify-center p-6 z-10">
+    <section id="rsvp" class="relative vh-fix flex items-center justify-center p-6 z-10">
         <div class="bubbles-container" id="bubbles">
             <!-- Populated via JS -->
         </div>
@@ -455,7 +455,7 @@
     </section>
 
     <!-- Ticket Section -->
-    <section id="ticket" class="relative min-h-screen vh-fix hidden items-center justify-center p-6 z-10 overflow-hidden opacity-0 transition-opacity duration-1000">
+    <section id="ticket" class="relative vh-fix hidden items-center justify-center p-6 z-10 overflow-hidden opacity-0 transition-opacity duration-1000">
         <div class="ticket-container w-full max-w-sm relative" id="ticket-interactive">
             
             <!-- Top Half -->
@@ -515,7 +515,7 @@
     </section>
 
     <!-- Gallery / Countdown Section -->
-    <section class="relative h-screen vh-fixed flex flex-col items-center justify-center p-6 z-10 overflow-hidden">
+    <section class="relative vh-fixed flex flex-col items-center justify-center p-6 z-10 overflow-hidden">
         <div class="absolute inset-0 z-0">
             <!-- Blurry camera texture -->
             <img alt="Disposable camera lens blur" class="w-full h-full object-cover blur-md opacity-40 mix-blend-screen" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZ9ddwu0HIPdvq4F_ewazN8Z1ujjTc6UgC5mBQKLgkx1gmXDS9bOiXusq747Jozn1j1w-5vbnFvVswF7WZSswF1Od0ObwbsFj7k4pBDpOhWgOIO-z_6bxg-XqK6v0NtfmdsHgR67nLHnaphCnXK9CslcZMvegsEQTW5sKlkJHfIHYtid46Zl6bt8mTivzDW8vVaCmhg8vjLFVqZKghxtIlrUyhXWXKdslABAc-Cu7T-Morux3pq4L7v7lWVvSimAFkpunBOjVPYAlY" />
