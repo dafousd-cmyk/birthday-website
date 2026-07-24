@@ -253,18 +253,18 @@
     <section class="relative min-h-screen w-full flex flex-col items-center justify-end overflow-hidden" style="background-color: #F5CDD5;">
         
         <!-- Watercolor sun arc - full bleed, large -->
-        <img src="./screen1/background.png" alt="" style="position: absolute; top: 5%; left: 50%; transform: translateX(-50%); width: 110%; max-width: none; pointer-events: none; user-select: none; filter: blur(1px);" />
+        <img src="./background.png" alt="" style="position: absolute; top: 5%; left: 50%; transform: translateX(-50%); width: 110%; max-width: none; pointer-events: none; user-select: none; filter: blur(1px);" />
         
         <!-- Watercolor noise overlay -->
         <div style="position: absolute; inset: 0; background-image: url('data:image/svg+xml,%3Csvg viewBox=%270 0 300 300%27 xmlns=%27http://www.w3.org/2000/svg%27%3E%3Cfilter id=%27n%27%3E%3CfeTurbulence type=%27fractalNoise%27 baseFrequency=%270.65%27 numOctaves=%274%27 stitchTiles=%27stitch%27/%3E%3C/filter%3E%3Crect width=%27100%25%27 height=%27100%25%27 filter=%27url(%23n)%27 opacity=%270.12%27/%3E%3C/svg%3E'); pointer-events: none; mix-blend-mode: multiply; opacity: 0.4;"></div>
         
         <!-- Flowers + citrus + cocktail combined - left side, bleeding off edges -->
-        <img src="./screen1/all include.png" alt="" style="position: absolute; bottom: -5px; left: -80px; width: 105vw; min-width: 750px; max-width: 1700px; z-index: 1; pointer-events: none; user-select: none;" />
+        <img src="./all include.png" alt="" style="position: absolute; bottom: -5px; left: -80px; width: 105vw; min-width: 750px; max-width: 1700px; z-index: 1; pointer-events: none; user-select: none;" />
         
         <!-- Disco ball - hanging top right, oversized, chain bleeds off top -->
         <div id="disco-ball" onclick="fireLasers()" style="position: absolute; top: -20px; right: 4%; z-index: 1; display: flex; flex-direction: column; align-items: center; cursor: pointer; transition: transform 0.5s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
             <div style="width: 2px; height: 50px; background: linear-gradient(to bottom, #C5A55A, #D4B96A);"></div>
-            <img src="./screen1/discoball.png" alt="Disco ball" style="width: 35vw; min-width: 250px; max-width: 550px;" />
+            <img src="./discoball.png" alt="Disco ball" style="width: 35vw; min-width: 250px; max-width: 550px;" />
         </div>
         
         <!-- Text -->
@@ -282,7 +282,7 @@
     <section id="dresscode" class="relative min-h-screen flex flex-col justify-between items-center w-full font-sans antialiased text-left">
         <!-- Fixed Background -->
         <div class="absolute inset-0 w-full h-full z-0 overflow-hidden">
-            <div class="w-full h-full bg-cover bg-center bg-no-repeat" style="background-image: url('./screen2/page 2 bg.png');"></div>
+            <div class="w-full h-full bg-cover bg-center bg-no-repeat" style="background-image: url('./page 2 bg.png');"></div>
             <div class="absolute inset-0 bg-black/20"></div> <!-- Light overlay for readability -->
         </div>
         
