@@ -593,7 +593,7 @@
             bubblesContainer.appendChild(b);
         }
 
-        // RSVP Submit
+// RSVP Submit
         function submitRSVP() {
             const btn = document.getElementById('rsvp-btn');
             const name = document.getElementById('name').value;
@@ -602,39 +602,55 @@
             if(!name || !phone) {
                 return; // Native HTML validation handles the warning
             }
-            
-            btn.innerHTML = 'See you there! ✨';
-            btn.classList.replace('bg-gold', 'bg-jade');
-            btn.classList.replace('text-night-plum', 'text-white');
-            
-            // Update ticket with guest name
-            document.getElementById('ticket-guest-name').innerText = name;
-            
-            // Show ticket section
-            const ticketSection = document.getElementById('ticket');
-            ticketSection.classList.remove('hidden');
-            ticketSection.classList.add('flex');
-            
-            // Force reflow
-            void ticketSection.offsetWidth;
-            
-            // Fade in
-            ticketSection.classList.remove('opacity-0');
-            ticketSection.classList.add('opacity-100');
-            
-            setTimeout(() => {
-                // Scroll to ticket section smoothly
-                ticketSection.scrollIntoView({ behavior: 'smooth' });
-                
-                // Reset button slightly after scrolling
-                setTimeout(() => {
-                    btn.innerHTML = 'Confirm RSVP';
-                    btn.classList.replace('bg-jade', 'bg-gold');
-                    btn.classList.replace('text-white', 'text-night-plum');
-                    document.getElementById('name').value = '';
-                    document.getElementById('phone').value = '';
-                }, 1000);
-            }, 800);
+
+            // Send data to Formspree
+            fetch("https://formspree.io/f/xrenopyl", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Accept": "application/json"
+                },
+                body: JSON.stringify({ Name: name, Phone: phone })
+            }).then(response => {
+                if (response.ok) {
+                    btn.innerHTML = 'See you there! ✨';
+                    btn.classList.replace('bg-gold', 'bg-jade');
+                    btn.classList.replace('text-night-plum', 'text-white');
+                    
+                    // Update ticket with guest name
+                    document.getElementById('ticket-guest-name').innerText = name;
+                    
+                    // Show ticket section
+                    const ticketSection = document.getElementById('ticket');
+                    ticketSection.classList.remove('hidden');
+                    ticketSection.classList.add('flex');
+                    
+                    // Force reflow
+                    void ticketSection.offsetWidth;
+                    
+                    // Fade in
+                    ticketSection.classList.remove('opacity-0');
+                    ticketSection.classList.add('opacity-100');
+                    
+                    setTimeout(() => {
+                        // Scroll to ticket section smoothly
+                        ticketSection.scrollIntoView({ behavior: 'smooth' });
+                        
+                        // Reset button slightly after scrolling
+                        setTimeout(() => {
+                            btn.innerHTML = 'Confirm RSVP';
+                            btn.classList.replace('bg-jade', 'bg-gold');
+                            btn.classList.replace('text-white', 'text-night-plum');
+                            document.getElementById('name').value = '';
+                            document.getElementById('phone').value = '';
+                        }, 1000);
+                    }, 800);
+                } else {
+                    btn.innerHTML = 'Error. Try again';
+                }
+            }).catch(error => {
+                btn.innerHTML = 'Error. Try again';
+            });
         }
 
         // Gallery Countdown Logic
